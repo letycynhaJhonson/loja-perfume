@@ -17,6 +17,7 @@ function pesquisar() {
             resultados += `
                 <div class="item-resultado">
                     <h2><a href="${dado.link}" target="_blank">${dado.nome}</a></h2>
+                    <img src="${dado.imagem}" alt="${dado.nome}" class="produto-imagem">
                     <p class="descricao-meta">${dado.descricao}</p>
                     <a href="${dado.link}" target="_blank" rel="noopener noreferrer">Mais Informações</a>
                 </div>
@@ -25,8 +26,8 @@ function pesquisar() {
     }
 
     if (!resultados) {
-        resultados = "<p>Resultado não Encontrado</p>";
+        resultados = "<p>Nenhum produto encontrado!</p>";
     }
-
+    
     section.innerHTML = resultados;
 }
