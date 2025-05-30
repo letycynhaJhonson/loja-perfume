@@ -30,8 +30,8 @@
         </ul>
       </div>
       <div class="navbar-search">
-        <input type="text" placeholder="Buscar perfumes..." />
-        <button><i class="fas fa-search"></i></button>
+        <input type="text" id="search-input" placeholder="Buscar perfumes..." />
+        <button id="search-btn"><i class="fas fa-search"></i></button>
       </div>
       <div class="navbar-auth" id="navbar-auth">
         <button id="login-btn" class="btn-login"><i class="fas fa-user"></i> Login</button>
@@ -58,7 +58,7 @@
           <label for="senha">Senha:</label>
           <input type="password" id="senha" required placeholder="123456" />
         </div>
-        <button type="button" onclick="fazerLogin()">Entrar</button>
+        <button type="button" id="submit-login">Entrar</button>
       </form>
     </div>
   </div>
@@ -69,56 +69,56 @@
   </header>
 
   <main id="colecao">
-    <section class="resultados-pesquisa">
-      <div class="item-resultado">
+    <section class="resultados-pesquisa" id="results-container">
+      <div class="item-resultado" data-name="chanel n5">
         <h2>Chanel N°5</h2>
         <img src="https://www.chanel.com/images//t_one//w_0.51,h_0.51,c_crop/q_auto:good,f_autoplus,fl_lossy,dpr_1.1/w_1240/n-5-eau-de-parfum-spray-3-4fl-oz--packshot-default-125530-9564912943134.jpg" alt="Chanel N°5" class="produto-imagem" />
         <p class="descricao-meta">Um clássico atemporal que combina elegância e sofisticação em cada gota.</p>
         <a href="https://www.chanel.com/us/fragrance/women/c/7x1x1x30/n5/" target="_blank">Mais Informações</a>
       </div>
-      <div class="item-resultado">
+      <div class="item-resultado" data-name="dior sauvage">
         <h2>Dior Sauvage</h2>
         <img src="https://images.tcdn.com.br/img/img_prod/487119/sauvage_eau_de_toilette_100ml_perfume_masculino_617_1_728618c8df4dc047d99e7208a13b03e4.png" alt="Dior Sauvage" class="produto-imagem" />
         <p class="descricao-meta">Fresco e poderoso, inspirado na natureza selvagem.</p>
         <a href="https://www.dior.com/en_us/beauty/fragrance/mens-fragrance/sauvage" target="_blank">Mais Informações</a>
       </div>
-      <div class="item-resultado">
+      <div class="item-resultado" data-name="versace eros">
         <h2>Versace Eros</h2>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNWsvIjCM0OmbPYoawhRW899UyQd5XLgA_qA&s" alt="Versace Eros" class="produto-imagem" />
         <p class="descricao-meta">Uma fragrância intensa e sedutora para os apaixonados.</p>
         <a href="https://www.yslbeautyus.com/" target="_blank">Mais Informações</a>
       </div>
-      <div class="item-resultado">
+      <div class="item-resultado" data-name="tom ford black orchid">
         <h2>Tom Ford Black Orchid</h2>
         <img src="https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/product/66750/38c79d5b-8e42-4017-b493-5ca29c8bc631-black-orchid-tom-ford-eau-de-parfum-perfume-feminino-30ml.png" alt="Tom Ford Black Orchid" class="produto-imagem" />
         <p class="descricao-meta">Luxuoso e misterioso, uma fusão de escuridão e sensualidade.</p>
         <a href="https://www.tomfordbeauty.com/product/black-orchid-eau-de-parfum" target="_blank">Mais Informações</a>
       </div>
-      <div class="item-resultado">
+      <div class="item-resultado" data-name="armani code">
         <h2>Armani Code</h2>
         <img src="https://cdn.awsli.com.br/600x1000/1007/1007996/produto/45914792/armani-code-eau-de-toilette-masculino-125ml---giorgio-armani1--1--i5kxspxz9b.png" alt="Armani Code" class="produto-imagem" />
         <p class="descricao-meta">Elegância e charme masculino em uma fragrância sedutora.</p>
         <a href="https://www.giorgioarmanibeautyusa.com/" target="_blank">Mais Informações</a>
       </div>
-      <div class="item-resultado">
+      <div class="item-resultado" data-name="yves saint laurent libre">
         <h2>Yves Saint Laurent Libre</h2>
         <img src="https://www.yslbeauty.com.br/dw/image/v2/AAFM_PRD/on/demandware.static/-/Sites-ysl-master-catalog/pt_BR/dwe606df01/images/fullsize/FRAG/YSLBWW-50789YSL/3614273321792.01.png" alt="Yves Saint Laurent Libre" class="produto-imagem" />
         <p class="descricao-meta">Moderno e vibrante, uma expressão de liberdade feminina.</p>
         <a href="https://www.yslbeauty.com.br/libre/" target="_blank">Mais Informações</a>
       </div>
-      <div class="item-resultado">
+      <div class="item-resultado" data-name="lunar essence">
         <h2>Lunar Essence</h2>
         <img src="https://via.placeholder.com/300x300" alt="Lunar Essence" class="produto-imagem" />
         <p class="descricao-meta">Fragrância noturna com notas de jasmim e âmbar lunar.</p>
         <a href="#" target="_blank">Mais Informações</a>
       </div>
-      <div class="item-resultado">
+      <div class="item-resultado" data-name="ocean breeze">
         <h2>Ocean Breeze</h2>
         <img src="https://via.placeholder.com/300x300" alt="Ocean Breeze" class="produto-imagem" />
         <p class="descricao-meta">Frescor marinho com toques de algas e bergamota.</p>
         <a href="#" target="_blank">Mais Informações</a>
       </div>
-      <div class="item-resultado">
+      <div class="item-resultado" data-name="golden amber">
         <h2>Golden Amber</h2>
         <img src="https://via.placeholder.com/300x300" alt="Golden Amber" class="produto-imagem" />
         <p class="descricao-meta">Fragrância quente e luxuosa com notas de baunilha e âmbar.</p>
@@ -131,81 +131,138 @@
     <p>&copy; 2025 Perfume Imports. Todos os direitos reservados.</p>
   </footer>
 
-  <script src="script.js"></script>
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import {
-      getAuth,
-      signInWithEmailAndPassword,
-      signOut,
-      onAuthStateChanged,
-    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  
+  <script>
+    // Configuração do Firebase
     const firebaseConfig = {
       apiKey: "AIzaSyASMbnIV76d92zWiP9WkDVqPlwRMuYmMC4",
       authDomain: "kets-imports.firebaseapp.com",
       projectId: "kets-imports",
       storageBucket: "kets-imports.appspot.com",
       messagingSenderId: "947170359557",
-      appId: "1:947170359557:web:d666c7aa3264ca91f51f6c",
+      appId: "1:947170359557:web:d666c7aa3264ca91f51f6c"
     };
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+    // Inicializa o Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
 
-    const loginBtn = document.getElementById("login-btn");
-    const logoutBtn = document.getElementById("logout-btn");
-    const userInfo = document.getElementById("user-info");
-    const usernameDisplay = document.getElementById("username-display");
-    const loginModal = document.getElementById("login-modal");
-    const closeModal = document.querySelector(".close-modal");
+    // Elementos da interface
+    const loginBtn = document.getElementById('login-btn');
+    const logoutBtn = document.getElementById('logout-btn');
+    const userInfo = document.getElementById('user-info');
+    const loginModal = document.getElementById('login-modal');
+    const closeModal = document.querySelector('.close-modal');
+    const submitLogin = document.getElementById('submit-login');
+    const mensagemLogin = document.getElementById('mensagem-login');
+    const usernameDisplay = document.getElementById('username-display');
+    const searchInput = document.getElementById('search-input');
+    const searchBtn = document.getElementById('search-btn');
+    const resultsContainer = document.getElementById('results-container');
+    const perfumeItems = document.querySelectorAll('.item-resultado');
 
-    loginBtn.addEventListener("click", () => {
-      loginModal.style.display = "block";
+    // Abrir modal de login
+    loginBtn.addEventListener('click', () => {
+      loginModal.style.display = 'block';
     });
 
-    closeModal.addEventListener("click", () => {
-      loginModal.style.display = "none";
+    // Fechar modal de login
+    closeModal.addEventListener('click', () => {
+      loginModal.style.display = 'none';
     });
 
-    window.addEventListener("click", (event) => {
+    // Fechar modal ao clicar fora
+    window.addEventListener('click', (event) => {
       if (event.target === loginModal) {
-        loginModal.style.display = "none";
+        loginModal.style.display = 'none';
       }
     });
 
-    window.fazerLogin = () => {
-      const email = document.getElementById("email").value;
-      const senha = document.getElementById("senha").value;
-      const msg = document.getElementById("mensagem-login");
+    // Função de login
+    submitLogin.addEventListener('click', () => {
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
 
-      signInWithEmailAndPassword(auth, email, senha)
-        .then(() => {
-          msg.innerText = "Login realizado com sucesso!";
-          msg.style.color = "green";
-          loginModal.style.display = "none";
+      auth.signInWithEmailAndPassword(email, senha)
+        .then((userCredential) => {
+          loginModal.style.display = 'none';
+          document.getElementById('login-form').reset();
+          mensagemLogin.textContent = '';
         })
         .catch((error) => {
-          msg.innerText = "Erro ao fazer login: " + error.message;
-          msg.style.color = "red";
+          mensagemLogin.textContent = error.message;
+          mensagemLogin.style.color = 'red';
         });
-    };
-
-    logoutBtn.addEventListener("click", () => {
-      signOut(auth).catch((error) => {
-        console.error("Erro ao fazer logout:", error);
-      });
     });
 
-    onAuthStateChanged(auth, (user) => {
+    // Função de logout
+    logoutBtn.addEventListener('click', () => {
+      auth.signOut();
+    });
+
+    // Monitorar estado de autenticação
+    auth.onAuthStateChanged((user) => {
       if (user) {
-        loginBtn.style.display = "none";
-        userInfo.style.display = "flex";
-        usernameDisplay.textContent = user.email.split("@")[0];
+        loginBtn.style.display = 'none';
+        userInfo.style.display = 'flex';
+        usernameDisplay.textContent = user.email.split('@')[0];
       } else {
-        loginBtn.style.display = "inline-block";
-        userInfo.style.display = "none";
+        loginBtn.style.display = 'inline-block';
+        userInfo.style.display = 'none';
       }
+    });
+
+    // Função de pesquisa
+    function performSearch() {
+      const searchTerm = searchInput.value.toLowerCase();
+      
+      perfumeItems.forEach(item => {
+        const perfumeName = item.getAttribute('data-name').toLowerCase();
+        if (perfumeName.includes(searchTerm)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Event listeners para pesquisa
+    searchBtn.addEventListener('click', performSearch);
+    searchInput.addEventListener('keyup', (e) => {
+      if (e.key === 'Enter') {
+        performSearch();
+      }
+    });
+
+    // Dropdown menu
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdowns = document.querySelectorAll('.dropdown');
+
+      dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector('a');
+        const menu = dropdown.querySelector('.dropdown-menu');
+
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
+            if (otherMenu !== menu) {
+              otherMenu.style.display = 'none';
+            }
+          });
+
+          menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        });
+      });
+
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown')) {
+          document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.style.display = 'none';
+          });
+        }
+      });
     });
   </script>
 </body>
